@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="064dc1d1-5f4a-46d1-9c8b-72a40ae218c2" name="Changes" comment="Created new branch and updated application.properties.">
-      <change afterPath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/java/com/example/Unit_2_Final_Project/controllers/ImageSetsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/java/com/example/Unit_2_Final_Project/models/Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/java/com/example/Unit_2_Final_Project/models/ImageCategories.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/java/com/example/Unit_2_Final_Project/models/ImageSets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/java/com/example/Unit_2_Final_Project/repositories/ImageSetsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="064dc1d1-5f4a-46d1-9c8b-72a40ae218c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/java/com/example/Unit_2_Final_Project/Unit2FinalProjectApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/java/com/example/Unit_2_Final_Project/controllers/ImageSetsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/java/com/example/Unit_2_Final_Project/models/Image.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/java/com/example/Unit_2_Final_Project/models/ImageCategories.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/java/com/example/Unit_2_Final_Project/models/ImageSets.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/java/com/example/Unit_2_Final_Project/repositories/ImageSetsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-spring-boot-back-end-app/Unit-2-Final-Project/src/test/java/com/example/Unit_2_Final_Project/Unit2FinalProjectApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +29,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -72,6 +81,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Unit2FinalProjectApplication.executor&quot;: &quot;Run&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;api-feature-branch&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -103,6 +113,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit with fixed dependencies." />
     <MESSAGE value="Created new branch and updated application.properties." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created new branch and updated application.properties." />
+    <MESSAGE value="Created models for images, image sets, and image categories." />
+    <MESSAGE value="Created an empty controller and repository for image sets to implement future CRUD operations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created an empty controller and repository for image sets to implement future CRUD operations." />
   </component>
 </project>
