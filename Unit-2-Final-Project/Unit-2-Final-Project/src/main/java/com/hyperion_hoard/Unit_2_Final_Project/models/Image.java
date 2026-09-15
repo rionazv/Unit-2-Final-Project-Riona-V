@@ -1,7 +1,6 @@
 package com.hyperion_hoard.Unit_2_Final_Project.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "images")
@@ -25,12 +24,12 @@ public class Image {
     private String imageUrl;
 
     @Column(name = "image_tags")
-    private List<String> imageTags;
+    private String imageTags;
 
     // Constructors, getters, and setters
     public Image() {}
 
-    public Image(ImageCategories imageCategory, ImageSets imageSet, String imageUrl, List<String> imageTags) {
+    public Image(ImageCategories imageCategory, ImageSets imageSet, String imageUrl, String imageTags) {
         this.imageCategory = imageCategory;
         this.imageSet = imageSet;
         this.imageUrl = imageUrl;
@@ -64,8 +63,8 @@ public class Image {
 
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 
-    public List<String> getImageTags() { return imageTags; }
+    public String getImageTags() { return imageTags; }
 
-    public void setImageTags(List<String> imageTags) { this.imageTags = imageTags; }
+    public void setImageTags(String imageTags) { this.imageTags = imageTags; }
 
 }
