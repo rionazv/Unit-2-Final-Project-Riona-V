@@ -1,6 +1,8 @@
 package com.hyperion_hoard.Unit_2_Final_Project.models;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "image_sets")
 public class ImageSets {
@@ -11,6 +13,9 @@ public class ImageSets {
 
     @Column(name = "set_name")
     private String setName;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "imageSet", orphanRemoval = true)
+    private List<Image> images;
 
     // Constructors
     public ImageSets() {}
