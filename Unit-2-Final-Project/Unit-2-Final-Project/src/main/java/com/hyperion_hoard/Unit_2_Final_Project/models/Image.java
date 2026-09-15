@@ -12,11 +12,6 @@ public class Image {
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "image_category_id")
-    private ImageCategories imageCategory;
-
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "set_id")
     private ImageSets imageSet;
 
@@ -29,8 +24,7 @@ public class Image {
     // Constructors, getters, and setters
     public Image() {}
 
-    public Image(ImageCategories imageCategory, ImageSets imageSet, String imageUrl, String imageTags) {
-        this.imageCategory = imageCategory;
+    public Image(ImageSets imageSet, String imageUrl, String imageTags) {
         this.imageSet = imageSet;
         this.imageUrl = imageUrl;
         this.imageTags = imageTags;
@@ -43,14 +37,6 @@ public class Image {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public ImageCategories getImageCategory() {
-        return imageCategory;
-    }
-
-    public void setImageCategory(ImageCategories imageCategory) {
-        this.imageCategory = imageCategory;
     }
 
     public ImageSets getImageSet() { return imageSet; }
