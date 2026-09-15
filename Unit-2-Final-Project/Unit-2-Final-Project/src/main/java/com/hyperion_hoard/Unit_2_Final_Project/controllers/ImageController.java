@@ -2,13 +2,16 @@ package com.hyperion_hoard.Unit_2_Final_Project.controllers;
 import com.hyperion_hoard.Unit_2_Final_Project.models.Image;
 import com.hyperion_hoard.Unit_2_Final_Project.repositories.ImageRepository;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/images")
 public class ImageController {
 
-    private final ImageRepository imageRepository;
+    @Autowired
+    private ImageRepository imageRepository;
 
     public ImageController(ImageRepository imageRepository) {
         this.imageRepository = imageRepository;

@@ -3,13 +3,16 @@ package com.hyperion_hoard.Unit_2_Final_Project.controllers;
 import com.hyperion_hoard.Unit_2_Final_Project.models.ImageCategories;
 import com.hyperion_hoard.Unit_2_Final_Project.repositories.ImageCategoriesRepository;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/image-categories")
 public class ImageCategoriesController {
 
-    private final ImageCategoriesRepository imageCategoriesRepository;
+    @Autowired
+    private ImageCategoriesRepository imageCategoriesRepository;
 
     public ImageCategoriesController(ImageCategoriesRepository imageCategoriesRepository) {
         this.imageCategoriesRepository = imageCategoriesRepository;
