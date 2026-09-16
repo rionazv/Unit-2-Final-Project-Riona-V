@@ -1,4 +1,4 @@
-package com.example.Unit_2_Final_Project;
+package com.hyperion_hoard.Unit_2_Final_Project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
