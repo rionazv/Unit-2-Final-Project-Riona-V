@@ -1,8 +1,14 @@
 package com.hyperion_hoard.Unit_2_Final_Project.controllers;
+import com.hyperion_hoard.Unit_2_Final_Project.dto.ImageRequestDTO;
+import com.hyperion_hoard.Unit_2_Final_Project.dto.ImageSetsRequestDTO;
 import com.hyperion_hoard.Unit_2_Final_Project.models.Image;
+import com.hyperion_hoard.Unit_2_Final_Project.models.ImageCategories;
+import com.hyperion_hoard.Unit_2_Final_Project.models.ImageSets;
 import com.hyperion_hoard.Unit_2_Final_Project.repositories.ImageRepository;
 import java.util.List;
 
+import com.hyperion_hoard.Unit_2_Final_Project.repositories.ImageSetsRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +18,9 @@ public class ImageController {
 
     @Autowired
     private ImageRepository imageRepository;
+
+    @Autowired
+    private ImageSetsRepository imageSetsRepository;
 
     public ImageController(ImageRepository imageRepository) {
         this.imageRepository = imageRepository;
@@ -28,7 +37,15 @@ public class ImageController {
     }
 
     @PostMapping
-    public Image createImage(@RequestBody Image image) {
+    public Image createImage(@RequestBody ImageRequestDTO request) {
+        ImageSets set = imageSetsRepository.findById(request.getImageSetId())
+                .orElseThrow(() -> new EntityNotFoundException("Image set not found"));
+
+        Image image = new Image();
+        image.setImageUrl(request.getImageUrl());
+        image.setImageTags(request.getImageTags());
+        image.setImageSet(set);
+
         return imageRepository.save(image);
     }
 
