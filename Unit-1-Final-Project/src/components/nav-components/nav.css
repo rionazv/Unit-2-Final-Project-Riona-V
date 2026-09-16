@@ -10,10 +10,11 @@
   display: inherit;
   justify-content: center;
   align-items: center;
-  height: 8%;
+  height: 15%;
+  flex-direction: column;
 }
 
-#sticker-set {
+.dropdown-filter {
   height: 70%;
   width: 100%;
   margin: 0px 10px;
@@ -22,6 +23,7 @@
   font-weight: bold;
   border: none;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 #nav-icons {
