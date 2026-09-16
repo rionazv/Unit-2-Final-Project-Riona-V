@@ -5,6 +5,7 @@ import Header from './components/header-components/Header.'
 import MainBody from './components/MainBody'
 import HomeBody from './components/landing-page-components/HomeBody'
 import AboutBody from './components/landing-page-components/AboutBody'
+import AdminPortalBody from './components/admin-components/AdminPortalBody'
 
 function Home() {
   // Homepage
@@ -22,10 +23,18 @@ function About() {
 
 }
 
-function Stickers() {
+function Assets() {
   // Sticker organizer
   return(
     <MainBody/>
+  );
+
+}
+
+function AdminPortal() {
+  // Admin Portal
+  return(
+    <AdminPortalBody/>
   );
 
 }
@@ -44,7 +53,9 @@ function App() {
 
         <Route path='/about' element={<About />} />
 
-        <Route path='/assets' element={<Stickers />} />
+        <Route path='/assets' element={<Assets />} />
+
+        <Route path='/admin' element={<AdminPortal />} />
 
         <Route path='*' element={<Navigate to="/" />} />
 
