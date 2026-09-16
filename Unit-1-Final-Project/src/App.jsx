@@ -6,6 +6,8 @@ import MainBody from './components/MainBody'
 import HomeBody from './components/landing-page-components/HomeBody'
 import AboutBody from './components/landing-page-components/AboutBody'
 import AdminPortalBody from './components/admin-components/AdminPortalBody'
+import AdminPortalSetsBody from './components/admin-components/AdminPortalSetsBody'
+import AdminPortalImagesBody from './components/admin-components/AdminPortalImagesBody'
 
 function Home() {
   // Homepage
@@ -39,6 +41,22 @@ function AdminPortal() {
 
 }
 
+function AdminPortalSetsManager() {
+  // Admin Portal
+  return(
+    <AdminPortalSetsBody/>
+  );
+
+}
+
+function AdminPortalImagesManager() {
+  // Admin Portal
+  return(
+    <AdminPortalImagesBody/>
+  );
+
+}
+
 function App() {
 
   return (
@@ -56,6 +74,10 @@ function App() {
         <Route path='/assets' element={<Assets />} />
 
         <Route path='/admin' element={<AdminPortal />} />
+
+        <Route path='/admin/sets-manager' element={<AdminPortalSetsManager />} />
+
+        <Route path='/admin/images-manager' element={<AdminPortalImagesManager />} />
 
         <Route path='*' element={<Navigate to="/" />} />
 
