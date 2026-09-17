@@ -1,6 +1,5 @@
 package com.hyperion_hoard.Unit_2_Final_Project.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -44,6 +43,10 @@ public class Image {
 
     public void setImageSet(ImageSets imageSet) {
         this.imageSet = imageSet;
+    }
+
+    public int getImageSetId() {
+        return imageSet.getId();
     }
 
     public String getImageUrl() { return imageUrl; }
