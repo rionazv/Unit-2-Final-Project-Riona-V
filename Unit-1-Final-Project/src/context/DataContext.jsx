@@ -1,10 +1,10 @@
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Category from "../classes/Category";
+import Set from "../classes/Set";
+import Image from "../classes/Image";
 
-import { Category } from "../classes/Category";
-import { Set } from "../classes/Set";
-import { Image } from "../classes/Image";
-
-export const DataContext = createContext(null);
+// FOR WHATEVER REASON, THIS HAS TO BE IMPORTED FROM A DIFFERENT FILE BECAUSE KEEPING THEM IN THE SAME FILE THREW ERRORS.
+import { DataContext } from "./DataContextImport";
 
 export const DataProvider = ({ children }) => {
 
@@ -70,18 +70,13 @@ export const DataProvider = ({ children }) => {
 
     return (
 
-        <DataContext.Provider
-        value={{
-            allCategories,
-            allSets,
-            allImages
-        }}>
+        <DataContext.Provider value={{ allCategories, allSets, allImages }}>
 
             { children }
 
         </DataContext.Provider>
 
-    )
+    );
 
 
-}
+};
