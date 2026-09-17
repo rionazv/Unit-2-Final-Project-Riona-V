@@ -27,3 +27,32 @@
     height: 40%;
     font-size: 1.25rem;
 }
+
+.first-section {
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 98%;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.second-section {
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 98%;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+table, th, td {
+    border: 2px solid white;
+    border-collapse: collapse;
+    width: 80%;
+    padding: 10px;
+}

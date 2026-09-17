@@ -1,7 +1,109 @@
+import { use } from "react";
+import { DataContext } from "../../context/DataContextImport";
+
 export default function AdminPortalSetsBody() {
 
-    <section className="admin-portal-body-section">
+    const { allCategories, allSets } = use(DataContext);
+
+    // FALLBACK TO PREVENT THE PAGE FROM COMPLETELY BREAKING ON REFRESH IF EITHER VALUE IS NULL
+    if( !allCategories || !allSets ) {
+        return( "Data has not yet loaded. Please return via the portal page." );
+    }
+
+    return(
+
+        <section className="admin-portal-body-section">
+
+        <section className="first-section">
+
+            {/* TABLE TO DISPLAY ALL EXISTING CATEGORIES (GENERALLY UNCHANGING) */}
+            <h3>All Categories (Should Not Change)</h3>
+
+            <table id="all-sets-table">
+
+                <thead>
+                    <tr>
+                        <th style={{ width: '15%' }}>Category ID</th>
+                        <th style={{ width: '85%' }}>Category Name</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {allCategories.map( (category) => (
+                        <tr key={category.id}>
+                            <td style={{ width: '15%' }}>{category.id}</td>
+                            <td style={{ width: '85%' }}>{category.categoryName}</td>
+                        </tr>
+                    ) )}
+
+                </tbody>
+
+            </table>
+
+            {/* TABLE TO DISPLAY ALL EXISTING IMAGE SETS */}
+            <h3>All Image Sets</h3>
+
+            <table id="all-sets-table">
+
+                <thead>
+                    <tr>
+                        <th style={{ width: '15%' }}>Set ID</th>
+                        <th style={{ width: '15%' }}>Category ID</th>
+                        <th style={{ width: '70%' }}>SetName</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {allSets.map( (set) => (
+                        <tr key={set.id}>
+                            <td style={{ width: '15%' }}>{set.id}</td>
+                            <td style={{ width: '15%' }}>{set.categoryId}</td>
+                            <td style={{ width: '70%' }}>{set.setName}</td>
+                        </tr>
+                    ) )}
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <section className="second-section">
+
+            <form action="">
+
+                    <legend>Add a new set to the database</legend>
+                    <fieldset>
+
+                        <label htmlFor="newSetName">New Set Name: </label>
+                        <input type="text" name="newSetName" required />
+
+                        <br /><br />
+
+                        <label htmlFor="newSetCategory">Category it belongs to: </label>
+                        <select name="newSetCategory">
+
+                            {allCategories.map( (category) => (
+                                <option value={category.id}>{category.categoryName}</option>
+                            ) )}
+
+                        </select>
+
+                        <br /><br />
+                        <button type="submit">Add New Set</button>
+
+                    </fieldset>
+
+                    
+
+            </form>
+            
+        </section>
         
     </section>
+
+    )    
 
 }
