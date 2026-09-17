@@ -1,4 +1,4 @@
-#admin-portal-body-section, #admin-portal-sets-body-section, #admin-portal-images-body-section {
+.admin-portal-body-section {
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -21,6 +21,8 @@
 
 .admin-navigation-button {
     margin: 10px;
+    display: flex;
+    justify-content: center;
     width: 40%;
     height: 40%;
     font-size: 1.25rem;

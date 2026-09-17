@@ -1,6 +1,6 @@
 export default function AdminPortalSetsBody() {
 
-    <section id="admin-portal-sets-body-section">
+    <section className="admin-portal-body-section">
         
     </section>
 

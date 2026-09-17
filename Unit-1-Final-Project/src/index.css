@@ -58,7 +58,7 @@ body {
   align-items: inherit;
 }  
 
-button {
+button, Link {
   background-color: #ffe14b;
   color: black;
   padding: 10px 30px;
