@@ -49,6 +49,8 @@ export const DataProvider = ({ children }) => {
                     new Image(image.id, image.imageSetId, image.imageUrl, image.imageTags)
                 );
 
+                console.log(categoriesList, setsList, imagesList);
+
                 // UPDATE THE STATES SO THEY NOW HAVE THE DATA
                 setAllCategories(categoriesList);
                 setAllSets(setsList);
@@ -66,7 +68,7 @@ export const DataProvider = ({ children }) => {
         // RUN THE FETCHING FUNCTION!!
             fetchAllData();
 
-    }, [allCategories, allImages, allSets]);
+    }, []);
 
     return (
 
