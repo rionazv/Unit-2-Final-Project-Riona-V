@@ -45,7 +45,7 @@
     flex-direction: column;
     width: 60%;
     height: 98%;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     overflow: auto;
 }
@@ -55,4 +55,9 @@ table, th, td {
     border-collapse: collapse;
     width: 80%;
     padding: 10px;
+}
+
+.set-management-form {
+    width: 80%;
+    margin-top: 50px;
 }

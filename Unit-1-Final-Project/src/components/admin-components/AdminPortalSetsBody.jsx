@@ -17,7 +17,7 @@ export default function AdminPortalSetsBody() {
         <section className="first-section">
 
             {/* TABLE TO DISPLAY ALL EXISTING CATEGORIES (GENERALLY UNCHANGING) */}
-            <h3>All Categories (Should Not Change)</h3>
+            <h3>All Categories</h3>
 
             <table id="all-sets-table">
 
@@ -72,7 +72,8 @@ export default function AdminPortalSetsBody() {
 
         <section className="second-section">
 
-            <form action="">
+            {/* FORM TO ALLOW THE ADMIN TO UPLOAD A NEW IMAGE SET TO THE SETS DATABASE */}
+            <form action="" className="set-management-form">
 
                     <legend>Add a new set to the database</legend>
                     <fieldset>
@@ -96,7 +97,27 @@ export default function AdminPortalSetsBody() {
 
                     </fieldset>
 
-                    
+            </form>
+
+            {/* FORM TO ALLOW THE ADMIN TO DELETE AN IMAGE SET FROM THE DATABASE */}
+            <form action="" className="set-management-form">
+
+                    <legend>Delete a set from the database</legend>
+                    <fieldset>
+
+                        <label htmlFor="setToBeDeleted">Set to be deleted: </label>
+                        <select name="setToBeDeleted">
+
+                            {allSets.map( (sets) => (
+                                <option value={sets.id}>{sets.setName}</option>
+                            ) )}
+
+                        </select>
+
+                        <br /><br />
+                        <button type="submit">Delete this set</button>
+
+                    </fieldset>
 
             </form>
             
