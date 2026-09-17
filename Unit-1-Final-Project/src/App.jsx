@@ -42,7 +42,7 @@ function AdminPortal() {
 }
 
 function AdminPortalSetsManager() {
-  // Admin Portal
+  // Admin Portal - Manage sets
   return(
     <AdminPortalSetsBody/>
   );
@@ -50,7 +50,7 @@ function AdminPortalSetsManager() {
 }
 
 function AdminPortalImagesManager() {
-  // Admin Portal
+  // Admin Portal - Upload new images
   return(
     <AdminPortalImagesBody/>
   );
