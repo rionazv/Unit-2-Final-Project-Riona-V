@@ -17,7 +17,7 @@ export default function AdminPortalSetsBody() {
         <section className="first-section">
 
             {/* TABLE TO DISPLAY ALL EXISTING CATEGORIES (GENERALLY UNCHANGING) */}
-            <h3>All Categories</h3>
+            <h2>All Categories</h2>
 
             <table id="all-sets-table">
 
@@ -42,7 +42,7 @@ export default function AdminPortalSetsBody() {
             </table>
 
             {/* TABLE TO DISPLAY ALL EXISTING IMAGE SETS */}
-            <h3>All Image Sets</h3>
+            <h2>All Image Sets</h2>
 
             <table id="all-sets-table">
 
@@ -73,7 +73,7 @@ export default function AdminPortalSetsBody() {
         <section className="second-section">
 
             {/* FORM TO ALLOW THE ADMIN TO UPLOAD A NEW IMAGE SET TO THE SETS DATABASE */}
-            <form action="" className="set-management-form">
+            <form action="" className="management-form">
 
                     <legend>Add a new set to the database</legend>
                     <fieldset>
@@ -100,7 +100,7 @@ export default function AdminPortalSetsBody() {
             </form>
 
             {/* FORM TO ALLOW THE ADMIN TO DELETE AN IMAGE SET FROM THE DATABASE */}
-            <form action="" className="set-management-form">
+            <form action="" className="management-form">
 
                     <legend>Delete a set from the database</legend>
                     <fieldset>
