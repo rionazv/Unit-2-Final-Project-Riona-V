@@ -12,6 +12,7 @@ export const DataProvider = ({ children }) => {
     const [ allCategories, setAllCategories ] = useState(null);
     const [ allSets, setAllSets ] = useState(null);
     const [ allImages, setAllImages ] = useState(null);
+    const [ allValkyries, setAllValkyries ] = useState(null);
 
     // RUN THIS TO IMMEDIATELY BEGIN FETCHING DATA
     useEffect( () => {
@@ -55,6 +56,16 @@ export const DataProvider = ({ children }) => {
                 setAllCategories(categoriesList);
                 setAllSets(setsList);
                 setAllImages(imagesList);
+
+                setAllValkyries(
+                    // I MADE THIS TO CREATE A TAGS MENU MORE EASILY.
+                    [
+                        "Ai-Chan ", "Aponia ", "Bronya ", "Carole ", "Coralie ", "Durandal ", "Eden ","Elysia ", "Fu Hua ", "Griseo ", 
+                        "Helia ", "Himeko ", "Kiana ", "Kallen ", "Lantern ", "Liliya ", "Li Sushang ", "Mei ", "Misteln " ,"Mobius ", 
+                        "Pardofelis ", "PROMETHEUS ", "Raven ", "Rita ", "Rozaliya ", "Seele ", "Senadina ", "Shigure Kira ", "Sirin ", 
+                        "Songque ", "Sparkle ", "Susannah ", "Thelema ", "Theresa ", "Vill-V ", "Vita ", "Yae Sakura "
+                    ]
+                )
             
 
             } catch (error) {
@@ -72,7 +83,7 @@ export const DataProvider = ({ children }) => {
 
     return (
 
-        <DataContext.Provider value={{ allCategories, allSets, allImages }}>
+        <DataContext.Provider value={{ allCategories, allSets, allImages, allValkyries }}>
 
             { children }
 
