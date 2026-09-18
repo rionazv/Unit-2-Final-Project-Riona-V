@@ -55,23 +55,10 @@ export default function AdminPortalImagesBody() {
 
                         <br /><br />
 
-                        <label htmlFor="newImageCategory">Category it belongs to: </label>
-                        <select name="newImageCategory">
-
-                            {allCategories.map( (category) => (
-                                <option value={category.id}>{category.categoryName}</option>
-                            ) )}
-
-                        </select>
-
-                        <br /><br />
-
                         <label htmlFor="newImageSet">Set it belongs to: </label>
                         <select name="newImageSet">
 
-                            {allSets.map( (sets) => (
-                                <option value={sets.id}>{sets.setName}</option>
-                            ) )}
+                            {allSets.map( (sets) => ( <option value={sets.id}>{sets.setName}</option> ) ) }
 
                         </select>
 

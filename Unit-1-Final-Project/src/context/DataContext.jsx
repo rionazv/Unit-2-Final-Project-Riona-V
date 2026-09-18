@@ -57,17 +57,16 @@ export const DataProvider = ({ children }) => {
                 setAllSets(setsList);
                 setAllImages(imagesList);
 
+                // I MADE THIS TO CREATE A TAGS MENU MORE EASILY.
                 setAllValkyries(
-                    // I MADE THIS TO CREATE A TAGS MENU MORE EASILY.
                     [
                         "Ai-Chan ", "Aponia ", "Bronya ", "Carole ", "Coralie ", "Durandal ", "Eden ","Elysia ", "Fu Hua ", "Griseo ", 
                         "Helia ", "Himeko ", "Kiana ", "Kallen ", "Lantern ", "Liliya ", "Li Sushang ", "Mei ", "Misteln " ,"Mobius ", 
                         "Pardofelis ", "PROMETHEUS ", "Raven ", "Rita ", "Rozaliya ", "Seele ", "Senadina ", "Shigure Kira ", "Sirin ", 
-                        "Songque ", "Sparkle ", "Susannah ", "Thelema ", "Theresa ", "Vill-V ", "Vita ", "Yae Sakura "
+                        "Songque ", "Sparkle ", "Susannah ", "Thelema ", "Theresa ", "Vill-V ", "Vita ", "Yae Sakura ", "OTHER "
                     ]
                 )
             
-
             } catch (error) {
 
                 console.error(error.message);
@@ -90,6 +89,5 @@ export const DataProvider = ({ children }) => {
         </DataContext.Provider>
 
     );
-
 
 };
