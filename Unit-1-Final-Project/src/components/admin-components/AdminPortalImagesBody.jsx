@@ -6,23 +6,23 @@ export default function AdminPortalImagesBody() {
     // USEEFFECT TO INCLUDE THE SCRIPT FROM IMGBB
         useEffect( () => {
 
+            // if(document.querySelector( 'script[src="https://imgbb.com/upload.js"]' )) return;
+
             const imgbbScript = document.createElement("script");
             imgbbScript.src = "https://imgbb.com/upload.js";
             imgbbScript.async = true;
             imgbbScript.setAttribute("data-auto-insert", "html-embed-medium");
             imgbbScript.setAttribute("data-palette", "yellow");
+            // imgbbScript.setAttribute("data-sibling", "image-upload-div");
             document.body.appendChild(imgbbScript);
-
-
-            let existingScript = document.querySelector( 'script[src="https://imgbb.com/upload.js"]' );
-            if(existingScript) return;
+            console.log("Script loaded!");
 
         }, [])
         
     const { allCategories, allSets, allImages, allValkyries } = use(DataContext);
 
     // FALLBACK TO PREVENT THE PAGE FROM COMPLETELY BREAKING ON REFRESH IF ANY DATA IS NULL
-    if( !allCategories || !allSets || !allImages ) {
+    if( !allCategories || !allSets || !allImages || !allValkyries ) {
         return( "Data has not yet loaded. Please return via the portal page." );
     }
 
@@ -49,6 +49,11 @@ export default function AdminPortalImagesBody() {
 
                     <legend>Add a new image to the database</legend>
                     <fieldset>
+
+                        <label htmlFor="newImageUrl">Drag image here: </label>
+                        <input type="text" name="newImageUrl" id="newImageUrl" />
+
+                        <br /><br />
 
                         <label htmlFor="newImageCategory">Category it belongs to: </label>
                         <select name="newImageCategory">
