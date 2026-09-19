@@ -50,8 +50,6 @@ export const DataProvider = ({ children }) => {
                     new Image(image.id, image.imageSetId, image.imageUrl, image.imageTags)
                 );
 
-                console.log(categoriesList, setsList, imagesList);
-
                 // UPDATE THE STATES SO THEY NOW HAVE THE DATA
                 setAllCategories(categoriesList);
                 setAllSets(setsList);
@@ -60,10 +58,10 @@ export const DataProvider = ({ children }) => {
                 // I MADE THIS TO CREATE A TAGS MENU MORE EASILY.
                 setAllValkyries(
                     [
-                        "Ai-Chan ", "Aponia ", "Bronya ", "Carole ", "Coralie ", "Durandal ", "Eden ","Elysia ", "Fu Hua ", "Griseo ", 
-                        "Helia ", "Himeko ", "Kiana ", "Kallen ", "Lantern ", "Liliya ", "Li Sushang ", "Mei ", "Misteln " ,"Mobius ", 
-                        "Pardofelis ", "PROMETHEUS ", "Raven ", "Rita ", "Rozaliya ", "Seele ", "Senadina ", "Shigure Kira ", "Sirin ", 
-                        "Songque ", "Sparkle ", "Susannah ", "Thelema ", "Theresa ", "Vill-V ", "Vita ", "Yae Sakura ", "OTHER "
+                        "Ai-Chan", "Aponia", "Bronya", "Carole", "Coralie", "Durandal", "Eden","Elysia", "Fu Hua", "Griseo", 
+                        "Helia", "Himeko", "Kiana", "Kallen", "Lantern", "Liliya", "Li Sushang", "Mei", "Misteln" ,"Mobius", 
+                        "Pardofelis", "PROMETHEUS", "Raven", "Rita", "Rozaliya", "Seele", "Senadina", "Shigure Kira", "Sirin", 
+                        "Songque", "Sparkle", "Susannah", "Thelema", "Theresa", "Vill-V", "Vita", "Yae Sakura", "OTHER"
                     ]
                 )
             
