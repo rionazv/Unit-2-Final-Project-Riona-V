@@ -133,18 +133,19 @@ export default function AdminPortalImagesBody() {
             {/* FORM TO ALLOW THE ADMIN TO UPLOAD A NEW IMAGE TO THE IMAGES DATABASE */}
             <form  onSubmit={handleAddImage} className="management-form">
 
-                    <legend>Add a new image to the database</legend>
                     <fieldset>
+
+                    <legend>Add a new image to the database</legend>
 
                         {/* THE IMAGE WILL EMBED ITSELF INTO THE UPLOADER. DRAGGING THE IMAGE INTO THE URL FIELD WILL GRAB THE URL. */}
                         {/* IF IMAGE WAS NOT UPLOADED VIA THE UPLOADER, YOU CAN STILL PASTE THE LINK IN. */}
-                        <label htmlFor="newImageUrl">Copy image link here or drag image here: </label>
-                        <input type="text" name="newImageUrl" id="newImageUrl" required />
+                        <label htmlFor="newImageUrl">Copy image link here or drag image here: </label><br />
+                        <input className="admin-input" type="text" name="newImageUrl" id="newImageUrl" required />
 
                         <br /><br />
 
-                        <label htmlFor="newImageSet">Set it belongs to: </label>
-                        <select name="newImageSet">
+                        <label htmlFor="newImageSet">Set it belongs to: </label><br />
+                        <select className="admin-dropdown-filter" name="newImageSet">
 
                             {allSets.map( (sets) => ( <option key={sets.id} value={sets.id}>{sets.setName}</option> ) ) }
 

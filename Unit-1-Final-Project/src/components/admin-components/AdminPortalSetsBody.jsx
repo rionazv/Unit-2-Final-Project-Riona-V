@@ -191,16 +191,17 @@ export default function AdminPortalSetsBody() {
             {/* FORM TO ALLOW THE ADMIN TO UPLOAD A NEW IMAGE SET TO THE SETS DATABASE */}
             <form onSubmit={handleAddSet} className="management-form">
 
-                    <legend>Add a new set to the database</legend>
                     <fieldset>
 
-                        <label htmlFor="newSetName">New Set Name: </label>
-                        <input type="text" name="newSetName" id="newSetName" required />
+                        <legend>Add a new set to the database</legend>
+
+                        <label htmlFor="newSetName">New Set Name: </label><br />
+                        <input type="text" className="admin-input" name="newSetName" id="newSetName" required />
 
                         <br /><br />
 
-                        <label htmlFor="newSetCategory">Category it belongs to: </label>
-                        <select name="newSetCategory" id="newSetCategory">
+                        <label htmlFor="newSetCategory">Category it belongs to: </label><br />
+                        <select className="admin-dropdown-filter" name="newSetCategory" id="newSetCategory">
 
                             {allCategories.map( (category) => (
                                 <option key={category.id} value={category.id}>{category.categoryName}</option>
@@ -218,11 +219,12 @@ export default function AdminPortalSetsBody() {
             {/* FORM TO ALLOW THE ADMIN TO UPLOAD A NEW IMAGE SET TO THE SETS DATABASE */}
             <form onSubmit={handleUpdateSet} className="management-form">
 
-                    <legend>Update a set in the database</legend>
                     <fieldset>
 
-                        <label htmlFor="setToBeUpdated">Set to be updated: </label>
-                        <select name="setToBeUpdated">
+                        <legend>Update a set in the database</legend>
+
+                        <label htmlFor="setToBeUpdated">Set to be updated: </label><br />
+                        <select className="admin-dropdown-filter" name="setToBeUpdated">
 
                             {allSets.map( (sets) => (
                                 <option key={sets.id} value={sets.id}>{sets.setName}</option>
@@ -232,13 +234,13 @@ export default function AdminPortalSetsBody() {
 
                         <br /><br />
 
-                        <label htmlFor="updatedSetName">Updated Set Name: </label>
-                        <input type="text" name="updatedSetName" id="updatedSetName" required />
+                        <label htmlFor="updatedSetName">Updated Set Name: </label><br />
+                        <input type="text" className="admin-input" name="updatedSetName" id="updatedSetName" required />
 
                         <br /><br />
 
-                        <label htmlFor="updatedSetCategory">Category it belongs to: </label>
-                        <select name="updatedSetCategory" id="updatedSetCategory">
+                        <label htmlFor="updatedSetCategory">Category it belongs to: </label><br />
+                        <select className="admin-dropdown-filter" name="updatedSetCategory" id="updatedSetCategory">
 
                             {allCategories.map( (category) => (
                                 <option key={category.id} value={category.id}>{category.categoryName}</option>
@@ -258,11 +260,12 @@ export default function AdminPortalSetsBody() {
             {/* FORM TO ALLOW THE ADMIN TO DELETE AN IMAGE SET FROM THE DATABASE */}
             <form onSubmit={handleDeleteSet} className="management-form">
 
-                    <legend>Delete a set from the database</legend>
                     <fieldset>
 
-                        <label htmlFor="setToBeDeleted">Set to be deleted: </label>
-                        <select name="setToBeDeleted">
+                    <legend>Delete a set from the database</legend>
+
+                        <label htmlFor="setToBeDeleted">Set to be deleted: </label><br />
+                        <select className="admin-dropdown-filter" name="setToBeDeleted">
 
                             {allSets.map( (sets) => (
                                 <option key={sets.id} value={sets.id}>{sets.setName}</option>

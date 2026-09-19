@@ -48,20 +48,36 @@
     overflow: auto;
 }
 
-table, th, td {
+table, th {
     border: 2px solid white;
     border-collapse: collapse;
     width: 90%;
     padding: 5px;
 }
 
+th, td {
+    padding: 10px 5px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(245, 245, 245, 0.3);
+}
+
 .management-form {
     width: 80%;
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .management-form fieldset {
     padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+legend {
+    font-size: 1.25em;
 }
 
 #upload-instructions {
@@ -91,10 +107,33 @@ table, th, td {
 
 .valk-tag-div {
     margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.valk-tag-checkbox {
+.admin-dropdown-filter, .admin-input {
+    margin: 0px 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0px;
+    padding: 10px;
+    width: 50%;
+    min-width: 0;
+    box-sizing: border-box;
+}
 
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+}
+
+input:checked {
+    accent-color: #ffe14b;
+    color: black;
 }
 
 /* MOBILE STYLES */
