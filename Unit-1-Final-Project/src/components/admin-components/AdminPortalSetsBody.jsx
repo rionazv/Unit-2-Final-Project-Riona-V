@@ -197,7 +197,7 @@ export default function AdminPortalSetsBody() {
                         <select name="newSetCategory" id="newSetCategory">
 
                             {allCategories.map( (category) => (
-                                <option value={category.id}>{category.categoryName}</option>
+                                <option key={category.id} value={category.id}>{category.categoryName}</option>
                             ) )}
 
                         </select>
@@ -219,7 +219,7 @@ export default function AdminPortalSetsBody() {
                         <select name="setToBeUpdated">
 
                             {allSets.map( (sets) => (
-                                <option value={sets.id}>{sets.setName}</option>
+                                <option key={sets.id} value={sets.id}>{sets.setName}</option>
                             ) )}
 
                         </select>
@@ -235,7 +235,7 @@ export default function AdminPortalSetsBody() {
                         <select name="updatedSetCategory" id="updatedSetCategory">
 
                             {allCategories.map( (category) => (
-                                <option value={category.id}>{category.categoryName}</option>
+                                <option key={category.id} value={category.id}>{category.categoryName}</option>
                             ) )}
 
                         </select>
@@ -259,7 +259,7 @@ export default function AdminPortalSetsBody() {
                         <select name="setToBeDeleted">
 
                             {allSets.map( (sets) => (
-                                <option value={sets.id}>{sets.setName}</option>
+                                <option key={sets.id} value={sets.id}>{sets.setName}</option>
                             ) )}
 
                         </select>
