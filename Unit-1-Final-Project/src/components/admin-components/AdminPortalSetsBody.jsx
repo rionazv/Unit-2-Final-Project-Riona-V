@@ -160,7 +160,7 @@ export default function AdminPortalSetsBody() {
                     <tr>
                         <th style={{ width: '15%' }}>Set ID</th>
                         <th style={{ width: '15%' }}>Category ID</th>
-                        <th style={{ width: '70%' }}>SetName</th>
+                        <th style={{ width: '70%' }}>Set Name</th>
                     </tr>
                 </thead>
 
