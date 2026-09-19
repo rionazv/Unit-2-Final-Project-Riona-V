@@ -136,7 +136,7 @@ input:checked {
     color: black;
 }
 
-/* MOBILE STYLES */
+/* TABLET & MOBILE STYLES */
 @media screen and (max-width: 1340px) {
     .admin-portal-body-section {
         flex-direction: column;
@@ -154,5 +154,9 @@ input:checked {
     .first-section {
         margin-top: 20px;
         border-top: 2px solid white;
+    }
+
+    .admin-dropdown-filter, .admin-input {
+        width: 100%;
     }
 }
