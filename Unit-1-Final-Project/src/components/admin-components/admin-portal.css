@@ -73,6 +73,12 @@ table, th, td {
     flex-shrink: 0;
 }
 
+#image-upload-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 #tag-section {
     display: flex;
     flex-direction: row;

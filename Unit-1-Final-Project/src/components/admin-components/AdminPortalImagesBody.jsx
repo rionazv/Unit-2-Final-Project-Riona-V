@@ -3,10 +3,14 @@ import { DataContext } from "../../context/DataContextImport";
 
 export default function AdminPortalImagesBody() {
 
+    const { allCategories, allSets, allImages, allValkyries } = use(DataContext);
+    
+    const isDataReady = ( allCategories && allSets && allImages && allValkyries );
+
     // USEEFFECT TO INCLUDE THE SCRIPT FROM IMGBB
         useEffect( () => {
 
-            // if(document.querySelector( 'script[src="https://imgbb.com/upload.js"]' )) return;
+            if(!isDataReady) return;
 
             const imgbbScript = document.createElement("script");
             imgbbScript.src = "https://imgbb.com/upload.js";
@@ -17,12 +21,10 @@ export default function AdminPortalImagesBody() {
             document.body.appendChild(imgbbScript);
             console.log("Script loaded!");
 
-        }, [])
-        
-    const { allCategories, allSets, allImages, allValkyries } = use(DataContext);
+        }, [isDataReady])
 
     // FALLBACK TO PREVENT THE PAGE FROM COMPLETELY BREAKING ON REFRESH IF ANY DATA IS NULL
-    if( !allCategories || !allSets || !allImages || !allValkyries ) {
+    if( !isDataReady ) {
         return( "Data has not yet loaded. Please return via the portal page." );
     }
 
