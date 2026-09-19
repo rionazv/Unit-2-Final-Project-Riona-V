@@ -3,11 +3,121 @@ import { DataContext } from "../../context/DataContextImport";
 
 export default function AdminPortalSetsBody() {
 
+    // GET ALL CATEGORIES AND SETS
     const { allCategories, allSets } = use(DataContext);
 
     // FALLBACK TO PREVENT THE PAGE FROM COMPLETELY BREAKING ON REFRESH IF EITHER VALUE IS NULL
     if( !allCategories || !allSets ) {
         return( "Data has not yet loaded. Please return via the portal page." );
+    }
+
+    // WHAT TO DO WHEN NEW SET FORM IS SUBMITTED
+    async function handleAddSet(event) {
+
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+
+        const setToAdd = {
+            setName: formData.get("newSetName"),
+            imageCategoryId: Number(formData.get("newSetCategory"))
+        }
+
+        try {
+
+            const response = await fetch("http://localhost:8080/api/image-sets", {
+                method: "POST",
+                headers: { "Content-Type": "application/JSON" },
+                body: JSON.stringify(setToAdd)
+            });
+
+            if(!response.ok) {
+                throw new Error("Failed to add new set to the database.");
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+        } finally {
+
+            event.target.reset();
+
+        }
+
+        window.location.reload();
+
+    }
+
+    // WHAT TO DO WHEN NEW SET FORM IS SUBMITTED
+    async function handleUpdateSet(event) {
+
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+
+        const setToBeUpdatedId = formData.get("setToBeUpdated");
+
+        const setToUpdate = {
+            setName: formData.get("updatedSetName"),
+            imageCategoryId: Number(formData.get("updatedSetCategory"))
+        }
+
+        try {
+
+            const response = await fetch(`http://localhost:8080/api/image-sets/${setToBeUpdatedId}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/JSON" },
+                body: JSON.stringify(setToUpdate)
+            });
+
+            if(!response.ok) {
+                throw new Error("Failed to update the set in the database.");
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+        } finally {
+
+            event.target.reset();
+
+        }
+
+        window.location.reload();
+
+    }
+
+    // WHAT TO DO WHEN DELETE SET FORM IS SUBMITTED
+    async function handleDeleteSet(event) {
+
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+
+        const setToBeDeletedId = formData.get("setToBeDeleted");
+
+        try {
+
+            const response = await fetch(`http://localhost:8080/api/image-sets/${setToBeDeletedId}`, {
+                method: "DELETE"
+            });
+
+            if(!response.ok) {
+                throw new Error("Failed to delete set from the database.");
+            }
+
+            console.log("Deleted Successfully.");
+
+        } catch (error) {
+
+            console.error(error);
+
+        }
+
+        window.location.reload();
+
     }
 
     return(
@@ -73,18 +183,18 @@ export default function AdminPortalSetsBody() {
         <section className="second-section">
 
             {/* FORM TO ALLOW THE ADMIN TO UPLOAD A NEW IMAGE SET TO THE SETS DATABASE */}
-            <form action="" className="management-form">
+            <form onSubmit={handleAddSet} className="management-form">
 
                     <legend>Add a new set to the database</legend>
                     <fieldset>
 
                         <label htmlFor="newSetName">New Set Name: </label>
-                        <input type="text" name="newSetName" required />
+                        <input type="text" name="newSetName" id="newSetName" required />
 
                         <br /><br />
 
                         <label htmlFor="newSetCategory">Category it belongs to: </label>
-                        <select name="newSetCategory">
+                        <select name="newSetCategory" id="newSetCategory">
 
                             {allCategories.map( (category) => (
                                 <option value={category.id}>{category.categoryName}</option>
@@ -99,8 +209,48 @@ export default function AdminPortalSetsBody() {
 
             </form>
 
+            {/* FORM TO ALLOW THE ADMIN TO UPLOAD A NEW IMAGE SET TO THE SETS DATABASE */}
+            <form onSubmit={handleUpdateSet} className="management-form">
+
+                    <legend>Update a set in the database</legend>
+                    <fieldset>
+
+                        <label htmlFor="setToBeUpdated">Set to be updated: </label>
+                        <select name="setToBeUpdated">
+
+                            {allSets.map( (sets) => (
+                                <option value={sets.id}>{sets.setName}</option>
+                            ) )}
+
+                        </select>
+
+                        <br /><br />
+
+                        <label htmlFor="updatedSetName">Updated Set Name: </label>
+                        <input type="text" name="updatedSetName" id="updatedSetName" required />
+
+                        <br /><br />
+
+                        <label htmlFor="updatedSetCategory">Category it belongs to: </label>
+                        <select name="updatedSetCategory" id="updatedSetCategory">
+
+                            {allCategories.map( (category) => (
+                                <option value={category.id}>{category.categoryName}</option>
+                            ) )}
+
+                        </select>
+
+                        <br /><br />
+
+                        <button type="submit">Update This Set</button>
+
+                    </fieldset>
+
+            </form>
+
+
             {/* FORM TO ALLOW THE ADMIN TO DELETE AN IMAGE SET FROM THE DATABASE */}
-            <form action="" className="management-form">
+            <form onSubmit={handleDeleteSet} className="management-form">
 
                     <legend>Delete a set from the database</legend>
                     <fieldset>
