@@ -18,6 +18,7 @@ export default function AdminPortalSetsBody() {
 
         const formData = new FormData(event.currentTarget);
 
+        // PREPARE THE PAYLOAD.
         const setToAdd = {
             setName: formData.get("newSetName"),
             imageCategoryId: Number(formData.get("newSetCategory"))
@@ -45,11 +46,12 @@ export default function AdminPortalSetsBody() {
 
         }
 
+        // RELOAD THE PAGE SO THE NEW ENTRY SHOWS UP.
         window.location.reload();
 
     }
 
-    // WHAT TO DO WHEN NEW SET FORM IS SUBMITTED
+    // WHAT TO DO WHEN UPDATE SET FORM IS SUBMITTED
     async function handleUpdateSet(event) {
 
         event.preventDefault();
@@ -58,6 +60,7 @@ export default function AdminPortalSetsBody() {
 
         const setToBeUpdatedId = formData.get("setToBeUpdated");
 
+        // PREPARE THE PAYLOAD.
         const setToUpdate = {
             setName: formData.get("updatedSetName"),
             imageCategoryId: Number(formData.get("updatedSetCategory"))
@@ -85,6 +88,7 @@ export default function AdminPortalSetsBody() {
 
         }
 
+        // RELOAD THE PAGE SO THE UPDATED ENTRY SHOWS UP.
         window.location.reload();
 
     }
@@ -96,6 +100,7 @@ export default function AdminPortalSetsBody() {
 
         const formData = new FormData(event.currentTarget);
 
+        // NO PAYLOAD NEEDS TO BE PREPARED, THE VALUE OF EACH DROPDOWN IS ALREADY SET TO THE ID OF THE SET, SO THE ID IS DELIVERED.
         const setToBeDeletedId = formData.get("setToBeDeleted");
 
         try {
@@ -116,6 +121,7 @@ export default function AdminPortalSetsBody() {
 
         }
 
+        // RELOAD THE PAGE SO THE DELETED ENTRY IS NO LONGER VISIBLE.
         window.location.reload();
 
     }
