@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/images")
+@RequestMapping("/api/images")
 public class ImageController {
 
     @Autowired
@@ -50,10 +50,13 @@ public class ImageController {
     }
 
     @PutMapping("/{id}")
-    public Image updateImage(@PathVariable int id, @RequestBody Image updatedImage) {
+    public Image updateImage(@PathVariable int id, @RequestBody ImageRequestDTO updatedImage) {
+        ImageSets set = imageSetsRepository.findById(updatedImage.getImageSetId())
+                .orElseThrow(() -> new EntityNotFoundException("Image set not found"));
         return imageRepository.findById(id).map(image -> {
             image.setImageUrl(updatedImage.getImageUrl());
             image.setImageTags(updatedImage.getImageTags());
+            image.setImageSet(set);
             return imageRepository.save(image);
         }).orElse(null);
     }

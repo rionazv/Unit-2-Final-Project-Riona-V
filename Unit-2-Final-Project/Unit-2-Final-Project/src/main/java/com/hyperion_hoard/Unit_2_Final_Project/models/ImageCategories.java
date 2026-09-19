@@ -1,4 +1,5 @@
 package com.hyperion_hoard.Unit_2_Final_Project.models;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class ImageCategories {
     @Column(name = "category_name")
     private String categoryName;
 
+    @JsonManagedReference
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "imageCategory", orphanRemoval = true)
     private List<ImageSets> imageSets = new ArrayList<>();
 

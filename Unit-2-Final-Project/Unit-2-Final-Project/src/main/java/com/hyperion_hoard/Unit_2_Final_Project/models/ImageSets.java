@@ -1,5 +1,6 @@
 package com.hyperion_hoard.Unit_2_Final_Project.models;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -16,11 +17,12 @@ public class ImageSets {
     @Column(name = "set_name")
     private String setName;
 
-    @JsonIgnore
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "image_category_id")
     private ImageCategories imageCategory;
 
+    @JsonManagedReference
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "imageSet", orphanRemoval = true)
     private List<Image> images = new ArrayList<>();
 
@@ -50,6 +52,10 @@ public class ImageSets {
     public ImageCategories getImageCategory() { return imageCategory; }
 
     public void setImageCategory(ImageCategories imageCategory) { this.imageCategory = imageCategory; }
+
+    public int getImageCategoryId() {
+        return imageCategory.getId();
+    }
 
     // Helper method to add an image to the set
     public void addImage(Image image) {

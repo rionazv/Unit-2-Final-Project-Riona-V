@@ -1,0 +1,157 @@
+@import url(./components/header-components/header.css);
+@import url(./components/nav-components/nav.css);
+@import url(./components/gallery-components/gallery.css);
+@import url(./components/landing-page-components/landing-page.css);
+@import url(./components/admin-components/admin-portal.css);
+
+html, body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+}
+
+li, a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  overflow: hidden;
+}
+
+body {
+  background-image: url(../public/misc/taixuan.jpg);
+  background-size: cover;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+
+  background: rgba(31, 53, 99, 0.35);
+  backdrop-filter: blur(20px);
+}
+
+#main-body-section {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  width: 100vw;
+
+  box-sizing: border-box;
+  
+  flex: 1;
+  overflow: hidden;
+}
+
+#footer-section {
+  width: 100%;
+  height: 3vh;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}  
+
+button, Link {
+  background-color: #ffe14b;
+  color: black;
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ffe14b;
+}
+
+/* DESKTOP STYLES */
+@media screen and (min-width: 1340px) {
+
+  #gallery-section {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+}
+
+/* TABLET STYLES */
+@media screen and (max-width: 1340px) {
+
+  #header-section {
+    text-align: center;
+    grid-template-columns: 25% 75%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .page-navigation-list {
+    width: 100%;
+    padding: 0;
+  }
+
+  #home-body-section, #about-body-section {
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: scroll;
+  }
+
+  .info-blurb {
+    width: 80%;
+  }
+
+  #gallery-section {
+    grid-template-columns: repeat(4, 1fr);
+    flex-grow: 1;
+  }
+
+  #main-body-section {
+    grid-template-columns: 100%;
+  }
+
+  #nav-section {
+    flex-direction: row;
+    height: 5vh;
+  }
+
+  #nav-dropdown {
+    height: 100%;
+    width: 100%;
+  }
+
+  #sticker-set {
+    height: 80%;
+    width: 90%;
+  }
+
+  #nav-icons {
+    display: none;
+  }
+
+}
+
+/* MOBILE STYLES */
+@media screen and (max-width: 576px) {
+
+  #gallery-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #main-body-section {
+    grid-template-columns: 100%;
+  }
+
+}
