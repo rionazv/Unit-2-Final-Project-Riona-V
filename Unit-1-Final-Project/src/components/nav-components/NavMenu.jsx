@@ -3,7 +3,7 @@ import NavDropdown from "./NavDropdown.jsx";
 // Currently disabling the sort-by-valk feature.
 // import NavIcons from "./NavIcons.jsx";
 
-export default function NavMenu({galleryState, setGalleryState}) {
+export default function NavMenu( { galleryState, setGalleryState } ) {
     
     return (
 
