@@ -1,11 +1,15 @@
-import { useState } from "react"
+import { use, useState } from "react"
+import { DataContext } from "../context/DataContextImport";
 import NavMenu from "./nav-components/NavMenu"
 import GalleryBody from "./gallery-components/GalleryBody"
 
 export default function MainBody() {
 
+    // THE INITIAL GALLERY STATE WILL HAVE ALL IMAGES.
+    const { allImages } = use(DataContext);
+
     // STATE TO KEEP TRACK OF WHICH DROPDOWN MENU ITEM IS SELECTED; BY DEFAULT, ALL
-    const [galleryState, setGalleryState] = useState("All");
+    const [ galleryState, setGalleryState ] = useState(allImages);
 
     
     return(

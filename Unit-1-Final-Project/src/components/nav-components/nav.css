@@ -8,15 +8,18 @@
 
 #nav-dropdown {
   display: inherit;
-  justify-content: center;
-  align-items: center;
-  height: 15%;
+  justify-content: start;
+  height: 100%;
   flex-direction: column;
   margin: 0px 10px;
 }
 
+#nav-dropdown label {
+  margin: 5px 10px;
+}
+
 .dropdown-filter {
-  height: 70%;
+  height: 30px;
   width: 100%;
   margin: 0px 10px;
   background-color: rgba(255, 255, 255, 0.7);
@@ -25,36 +28,4 @@
   border: none;
   border-radius: 5px;
   margin-bottom: 10px;
-}
-
-#nav-icons {
-  display: inherit;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 90%;
-  overflow-y: scroll;
-}
-
-.chibi-icon {
-  width: 20%;
-  margin: 5px;
-  aspect-ratio: 1/1;
-
-  background: rgba(255, 207, 219, 0.466);
-  border-radius: 2px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.chibi-icon:hover {
-  cursor: pointer;
-}
-
-.is-active {
-  filter: grayscale(0%);
-}
-
-.is-not-active {
-  filter: grayscale(100%);
 }

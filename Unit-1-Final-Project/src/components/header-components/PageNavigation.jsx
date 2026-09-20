@@ -10,7 +10,7 @@ export default function PageNavigation() {
             <ul id="page-navigation-ul">
                 <Link to="/"><li className="page-navigation-list">Home</li></Link>
                 <Link to="/about"><li className="page-navigation-list">About</li></Link>
-                <Link to="/assets"><li className="page-navigation-list">Stickers</li></Link>
+                <Link to="/assets"><li className="page-navigation-list">Assets</li></Link>
                 <Link to="/admin"><li className="page-navigation-list">Admin Portal</li></Link>
             </ul>
 
