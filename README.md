@@ -53,7 +53,7 @@ cd Unit-2-Final-Project-Riona-V/Unit-2-Final-Project
 ```
 DB_PASS=[your_password]
 ```
-3. Run ```Categories_population_script.sql``` from the repository root in MySQL Workbench to populate the database with initial categories (Wallpapers, CGs and Stickers). This is optional, but highly recommended if you don't already have a category structure in mind. The reason that these categories are pre-populated is that for my application, these are generally unchanging values and will not need to be managed by an admin once they are populated. If you want to add your own types of categories, feel free to change them in the script.
+3. Run ```database_population_script.sql``` from the repository root in MySQL Workbench to populate the database with initial categories (Wallpapers, CGs and Stickers). The reason that these categories are pre-populated is that for my application, these are generally unchanging values and will not need to be managed by an admin once they are populated. If you want to add your own types of categories, feel free to change them in the script.
 4. Run the Spring Boot application: If you have an IDE such as IntelliJ, open the backend folder there and click the run button on ```Unit2FinalProjectApplication.java```. If you don't have an IDE, in the terminal, navigate to the back-end directory and execute the following command:
 ```
 mvn spring-boot:run
