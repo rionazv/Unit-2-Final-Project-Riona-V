@@ -81,7 +81,7 @@ Navigate to localhost:5173 in your browser to view the landing page of the appli
 2. Navigate to "Manage Image Sets."
 3. From there, you can create new image sets, view existing sets, and manage the images within those sets. Add a few sets, and name them whatever you wish.
 4. Navigate to "Upload Images."
-5. From there, you can upload images to the sets you created. Please note that the upload portal uses an imgBB widget, so if you have an account, you can log into it from another tab. If you don't, that's fine too; you can still upload images without an account. Just make sure to copy the image link from the upload portal and paste it into the "Image Link" field in the form.
+5. From there, you can upload images to the sets you created. Please note that the upload portal uses an imgBB widget, so if you have an account, you can log into it from another tab. If you don't, that's fine too; you can still upload images without an account. Just make sure to copy the image link from the upload portal and paste it into the "Image Link" field in the form. Feel free to use the test images provided in ```test_images``` at the repository root.
 6. You can also add tags to your images, which will help users find them on the client side. Currently, all the tags are characters from the game Honkai Impact 3rd, but a user could easily modify the list of characters within the ```DataContext.jsx``` file if they wanted to use this application for a different media.
 >[!NOTE]
 > Please create a set before trying to upload images. There is currently no "uncategorized" option, so you must create a set first.
